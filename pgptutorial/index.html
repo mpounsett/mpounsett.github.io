@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+            <section>
+               <h1> PGP Tutorial </h1>
+
+               <ul>
+                  <li><a href="#/1">what is pgp?</a></li>
+                  <li><a href="#/2">why use it?</a></li>
+                  <li><a href="#/3">how public key crypto works</a></li>
+                  <li><a href="#/4">how to generate a pgp key</a></li>
+                  <li><a href="#/5">how to share your key</a></li>
+                  <li><a href="#/6">how to validate a key</a></li>
+                  <li><a href="#/7">participate in a pgp key signing</a></li>
+               </ul></p>
+               
+               <small>
+                  <p>Click on links, or press &lt;SPACE&gt; to move through the
+                  tutorial.</p>
+                  <p>Press &lt;ESC&gt; to see the tutorial map.</p>
+               </small>
+
+            </section>
+
+            <section>
+               <section>
+                  <h2>What is PGP?</h2>
+               </section>
+
+               <section>
+                  <p>
+                  Pretty Good Privacy (PGP) and GNU Privacy Guard (GPG) are
+                  encryption programs that follow the PGP standard and
+                  provide:
+                  <ul>
+                     <li>authentication, using signing</li>
+                     <li>privacy, using encryption</li>
+                  </p>
+               </section>
+
+               <section>
+                  <h3>Signing</h3>
+                  <p>
+                  PGP and GPG (from now on we'll just say "PGP") can use the
+                  private half of a PGP key to create a digital signature for
+                  any block of data:
+                  <ul>
+                     <li>text</li>
+                     <li>source code</li>
+                     <li>binary data</li>
+                     <li>... anything ...</li>
+                  </ul>
+                  </p>
+               </section>
+
+               <section>
+                  <p>
+                  A PGP signature can be validated by any PGP software.
+                  </p>
+                  <p>
+                  All you need is:
+                  <ul>
+                     <li>the public half of the original key</li>
+                     <li>the original data</li>
+                  </ul>
+                  </p>
+               </section>
+               <section>
+                  <p>
+                  That proves that the data hasn't been modified since the
+                  signature was created.  And since only the person with the
+                  private half of the key could have created the signature,
+                  you can trust it's exactly the data they wanted you to see.
+                  </p>
+               </section>
+
+               <section>
+                  <h3>Encryption</h3>
+                  <p>
+                  PGP can use the public half of a PGP key to encrypt any
+                  block of data (all the same things it can sign) in a way
+                  that only someone with the private half of the key can
+                  decrypt it.
+                  </p>
+               </section>
+               <section>
+                  <p>
+                  If someone encrypts something with the public half of your
+                  key, and only you have the private half of your key, then
+                  only you can decrypt and see that data.
+                  </p>
+               </section>
+            </section>
+
+            <section>
+               <section>
+                  <h2>Why use PGP?</h2>
+               </section>
+
+               <section>
+                  <h3>Cryptographic Signatures</h3>
+
+               </section>
+            </section>
+
+            <section>
+               <section>
+                  <h2>How Public Key Crypto Works</h2>
+               </section>
+
+               <section>
+                  <h3> Some stuff</h3>
+               </section>
+            </section>
+
+
+            <section>
+               <section>
+                  <h2>How to Generate a PGP Key</h2>
+               </section>
+
+               <section>
+                  <h3> Some stuff</h3>
+               </section>
+            </section>
+
+            <section>
+               <section>
+                  <h2>How to Share Your Key</h2>
+               </section>
+
+               <section>
+                  <h3> Some stuff</h3>
+               </section>
+            </section>
+
+            <section>
+               <section>
+                  <h2>How to Validate a Key</h2>
+               </section>
+
+               <section>
+                  <h3> Some stuff</h3>
+               </section>
+            </section>
+
+            <section>
+               <section>
+                  <h2>Particiate in a PGP Key Signing</h2>
+               </section>
+
+               <section>
+                  <h3> Some stuff</h3>
+               </section>
+            </section>
+
+
+
+
+            
+
+
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
