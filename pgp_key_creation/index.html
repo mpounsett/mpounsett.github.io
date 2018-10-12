@@ -45,9 +45,9 @@
                <h2>Install GPG</h2>
 
                <p>
-               How you do this is largely system-specific.  The main thing to
-               note is that you should be installing a fairly current version
-               of GPG.  You want at least GPG 2.1.
+               How you install GPG is largely system-specific.  The main thing
+               to note is that you should be installing a fairly current
+               version of GPG.  You want at least GPG 2.1.
                </p>
 
                <p>
@@ -74,10 +74,34 @@
             </section>
 
             <section>
+               <h2>Check The Version of GPG</h2>
+
+               <p>
+               Check that you've got at least GPG 2.1. Your input is in blue,
+               below.
+               </p>
+
+               <div class="code">
+<span class="prompt">matt@keyparty:~
+9:28:38 (38) %</span> <span class="input">gpg --version</span>
+gpg (GnuPG) 2.1.18
+libgcrypt 1.7.6-beta
+Copyright (C) 2017 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+               </div>
+
+               <p>
+               If it's not 2.1 or later, go back and download a binary
+               distribution to install.
+               </p>
+            </section>
+            <section>
                <h2>Create a New Key</h2>
 
                <p>
-               Run gpg and create a key.  Your input is in blue, below.
+               Run gpg and create a key.
                </p>
 
                <div class="code">
@@ -182,9 +206,13 @@ sub   rsa2048 2018-10-12 [E] [expires: 2020-10-11]
                during lunch.
                </p>
                <p>
-               Bring with you a copy of your key, or a copy of the fingerprint
-               of your key, and some ID that others who do not know you can
-               trust (e.g. your passport).
+               Bring with you: <ul>
+                  <li>your laptop with your key, or a copy of the fingerprint
+                     of your key</li>
+                  <li>some ID that others who do not know you can
+                     trust (e.g. your passport).</li>
+                  <li>a pen and paper</li>
+               </ul>
                </p>
             </section>
 
