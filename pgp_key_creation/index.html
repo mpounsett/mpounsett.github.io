@@ -7,6 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/colours.css">
 		<link rel="stylesheet" href="css/theme/black.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -24,8 +25,170 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+               <h1>Creating and Sharing a PGP Key</h1>
+            </section>
+
+            <section>
+               <h2>Introduction</h2>
+
+               <p>
+               OpenPGP is a standard that is implemented by several
+               applications.  There is the PGP application, which is
+               commercial, but one of the most common is GPG (Gnu Privacy
+               Guard) which is what we'll be using in this how-to.
+               </p>
+
+            </section>
+
+            <section>
+               <h2>Install GPG</h2>
+
+               <p>
+               How you do this is largely system-specific.  The main thing to
+               note is that you should be installing a fairly current version
+               of GPG.  You want at least GPG 2.1.
+               </p>
+
+               <p>
+               If your operating system's package manager doesn't provide a
+               version of GPG that is at least 2.1, you can download a binary
+               distribution from 
+               <a href="https://gnupg.org/download/">https://gnupg.org/download/</a>.
+               </p>
+            </section>
+            <section>
+               <h2>Package Installs</h2>
+
+               <p>Here are the package install commands for some common
+               OSes.</p>
+
+               <p><dl>
+                  <dt>Debian</dt>
+                  <dd><div class="inline-code">% sudo apt-get install gnupg</div></dd>
+                  <dt>RedHat</dt>
+                  <dd><div class="inline-code">% sudo yum install gnupg</div></dd>
+                  <dt>Mac OS</dt>
+                  <dd><div class="inline-code">% brew install gpg</div></dd>
+               </dl></p>
+            </section>
+
+            <section>
+               <h2>Create a New Key</h2>
+
+               <p>
+               Run gpg and create a key.  Your input is in blue, below.
+               </p>
+
+               <div class="code">
+<span class="prompt">matt@keyparty:~
+9:30:15 (39) %</span> <span class="input">gpg --generate-key</span>
+gpg (GnuPG) 2.1.18; Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Note: Use "gpg --full-generate-key" for a full featured key generation dialog.
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: <span class="input">Jane Doe</span>
+Email address: <span class="input">jane@example.com</span>
+You selected this USER-ID:
+    "Jane Doe &lt;jane@example.com&gt;"
+
+Change (N)ame, (E)mail, or (O)kay/(Q)uit?
+               </div>
+            </section>
+
+            <section>
+               <h2>Set a Passphrase</h2>
+
+               <p>
+               When you say <em>Okay</em> to your entries, you'll be asked to
+               enter a passphrase.  Choose a strong, but easy to remember
+               passphrase and set it.
+               </p>
+               <p>
+               <em>REMEMBER:</em> if someone gets a copy of your key, this
+               passphrase is the only thing between them and their ability to
+               impersonate you or read all of your encrypted email!
+               </p>
+               <p>
+               Also remember, if you forget this passphrase, you will lose
+               access to your key.
+               </p>
+            </section>
+
+            <section>
+               <h2>Key Generation and Entropy</h2>
+
+               <p>
+               Once you set a passphrase, GPG will begin generating your key.
+               To do this, it needs a large amount of <em>entropy</em>, or
+               randomness, in order to generate some good large prime numbers.
+               This may take a while, and GPG may ask you to create some
+               activity on your computer in order to help its random number
+               generator.
+               </p>
+
+            </section>
+
+            <section>
+               <h2>Your New Key</h2>
+
+               <p>
+               Once GPG is done generating your key it will show you the new
+               key's details, and exit.
+               </p>
+
+               <div class="code">
+pub   rsa2048 2018-10-12 [SC] [expires: 2020-10-11]
+      BF5FDD3050025BA09A4AA8E4D3510260A0B75CB6
+      BF5FDD3050025BA09A4AA8E4D3510260A0B75CB6
+uid                      Jane Doe &lt;jane@example.com&gt;
+sub   rsa2048 2018-10-12 [E] [expires: 2020-10-11]
+               </div>
+            </section>
+            
+            <section>
+               <h2>Sharing Your Key</h2>
+
+               <p>
+               Extract an ASCII text file that contains your public key.
+               </p>
+
+               <div class="code">
+<span class="prompt">matt@keyparty:~
+09:34:01 (40) %</span> <span class="input">gpg -a --export -o jane-at-example.com.asc jane@example.com</span>
+               </div>
+
+               <p>
+               The <span class="input">-a</span> option causes GPG to output
+               ASCII instead of binary data.  The <span
+               class="input">-o</span> option specifies an output file.
+               </p>
+               
+               <p>
+               Email the output file to
+               <a href="mailto:pgpsign@dns-oarc.net">pgpsign@dns-oarc.net</a>
+               </p>
+            </section>
+
+            <section>
+               <h2>You're done!</h2>
+
+               <p>
+               Now all you need to do is show up at the key signing, on Sunday
+               during lunch.
+               </p>
+               <p>
+               Bring with you a copy of your key, or a copy of the fingerprint
+               of your key, and some ID that others who do not know you can
+               trust (e.g. your passport).
+               </p>
+            </section>
+
+
 			</div>
 		</div>
 

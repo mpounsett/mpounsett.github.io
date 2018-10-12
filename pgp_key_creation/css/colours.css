@@ -1,0 +1,22 @@
+div.code {
+   border-style: solid;
+   border-width: 0.25em;
+   border-color: grey;
+   padding: 0.25em;
+   font-family: monospace;
+   font-size: 40%;
+   text-align: left;
+	white-space: pre;
+	color: white;
+}
+div.inline-code {
+   font-family: monospace;
+   font-size: 75%;
+	color: lightgrey;
+}
+
+.prompt { color: grey }
+.input {
+	color: aqua;
+   font-style: bold;
+}
