@@ -79,7 +79,7 @@
 
                <p>
                Check that you've got at least GPG 2.1. Your input is in blue,
-               below.
+               below.  The output of gpg is in bright white.
                </p>
 
                <div class="code">
@@ -196,7 +196,7 @@ sub   rsa2048 2018-10-12 [E] [expires: 2020-10-11]
             </section>
             
             <section>
-               <h2>Sharing Your Key</h2>
+               <h2>Exporting Your Key</h2>
 
                <p>
                Extract an ASCII text file that contains your public key.
@@ -212,30 +212,171 @@ sub   rsa2048 2018-10-12 [E] [expires: 2020-10-11]
                ASCII instead of binary data.  The <span
                class="input">-o</span> option specifies an output file.
                </p>
+            </section>
+
+            <section>
+               <h2>Email Your Extracted Key</h2>
                
                <p>
-               Email the output file to
+               Email the output file as an attachment to
                <a href="mailto:pgpsign@dns-oarc.net">pgpsign@dns-oarc.net</a>
+               by 09:00 Friday morning.</p>
+               </p>
+               <p>
+               It's important to send the file as an attachment, because some
+               mail clients can cause formatting problems with the key data
+               that make it hard to import.
+               </p>
+               <p>
+               Don't be late, or your key won't be included!
                </p>
             </section>
 
             <section>
-               <h2>You're done!</h2>
+               <h2>Download The Keyring</h2>
 
                <p>
-               Now all you need to do is show up at the key signing, on Sunday
-               during lunch.
+               Just before morning break on Friday, everyone's keys will be
+               posted as a single export file in the Indico agenda for the key
+               signing at <a
+                  href="https://indico.dns-oarc.net/event/32/contributions/739/">https://indico.dns-oarc.net/event/32/contributions/739/</a>
+               </p>
+               <p>
+               Download this key file (keyring.asc) and its checksum file
+               (keyring.md5).  We'll make an announcement when these files are
+               ready to be downloaded.
+               </p>
+            </section>
+
+            <section>
+               <h2>Confirm your Key</h2>
+
+               <p>
+               You'll need to take a few steps to confirm that the fingerprint
+               for your key in the exported keyring is correct.  It's
+               important that you verify that it's your key in the keyring!
+               </p>
+               <p>
+               First, import the keyring into an <i>alternate</i> keyring file
+               in gpg.
+               </p>
+
+               <div class="code">
+<span class="prompt">matt@keyparty:~
+09:34:01 (41) %</span> <span class="input">gpg --no-default-keyring --keyring ./oarc31 --import keyring.asc</span>
+               </div>
+            </section>
+
+            <section>
+               <h2>Verify your Fingerprint</h2>
+
+               <p>
+               Compare the fingerprints from your standard keyring with the
+               one you just imported.
+               <p>
+
+               <div class="code">
+<span class="prompt">matt@keyparty:~ 09:34:01 (41) %</span> <span class="input">gpg --fingerprint jane@example.com</span>
+pub   rsa2048 2018-10-12 [SC] [expires: 2020-10-11]
+      BF5F DD30 5002 5BA0 9A4A  A8E4 D351 0260 A0B7 5CB6
+uid           [ultimate] Jane Doe <jane@example.com>
+sub   rsa2048 2018-10-12 [E] [expires: 2020-10-11]
+               </div>
+
+               <div class="code">
+<span class="prompt">matt@keyparty:~ 09:34:01 (41) %</span> <span class="input">gpg --no-default-keyring
+--keyring ./oarc 31 --fingerprint jane@example.com</span>
+pub   rsa2048 2018-10-12 [SC] [expires: 2020-10-11]
+      BF5F DD30 5002 5BA0 9A4A  A8E4 D351 0260 A0B7 5CB6
+uid           [ultimate] Jane Doe <jane@example.com>
+sub   rsa2048 2018-10-12 [E] [expires: 2020-10-11]
+               </div>
+            </section>
+
+            <section>
+               <h2>Join Us At The Key Signing!</h2>
+
+               <p>
+               Now all you need to do is show up at the key signing, on Friday
+               during lunch.  We'll be in the plenary room (where the rest of
+               the conference has been) at 13:10.
                </p>
                <p>
                Bring with you:
                <ul>
-                  <li>your laptop with your key on it</li>
+                  <li>your laptop with the export keyring on it</li>
                   <li>some ID that others who do not know you can
                      trust (e.g. your passport).</li>
-                  <li>a pen and paper</li>
+                  <li>a pen and paper, or some other way to take notes</li>
                </ul>
                </p>
             </section>
+
+            <section>
+               <h2>What to Expect</h2>
+
+               <p>
+               We will do three things during the key signing:
+               <ol>
+                  <li>Everyone will check that they have the correct keyring
+                     file</li>
+                  <li>Everyone will introduce themselves and declare which
+                     key in the keyring is theirs, and whether the
+                     fingerprints match their key.</li>
+                  <li>Everyone will have an opportunity to verify the ID of
+                     anyone they don't already know personally</li>
+               </ol>
+               </p>
+            </section>
+
+            <section>
+               <h2>Verifying the Keyring</h2>
+
+               <p>
+               We will post a checksum of the keyring file on the screen.
+               Generate an md5 cheksum of the keyring.asc file you downloaded
+               and make sure it matches.
+               </p>
+            </section>
+
+            <section>
+               <h2>Verifying Keys</h2>
+
+               <p>
+               Everyone will state which key is theirs in the keyring (usually
+               by calling out an email address in the key ID) and will state
+               whether the fingerprint in the downloaded file is correct.
+               </p>
+               <p>
+               Use the paper or note taking app you brought to take notes!
+               </p>
+            </section>
+
+            <section>
+               <h2>Verifying Identities</h2>
+
+               <p>
+               We'll form a sports "handshake circle" for everyone to check
+               ID.  Confirm that the people whose keys you're signing are who
+               they say they are!
+               </p>
+            </section>
+
+            <section>
+               <h2>And that's it!</h2>
+
+               <p>
+               That completes the face to face portion of the key singing
+               party!
+               </p>
+               <p>
+               Everyone can go home and sign keys, then email the signed keys
+               back to their owner, at their leisure.
+               </p>
+               <p>
+               Watch this space for some instructions on using <span
+                  class="input">caff</span> to automatically sign keys!
+               </p>
 
 
 			</div>
